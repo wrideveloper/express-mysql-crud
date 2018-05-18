@@ -1,0 +1,20 @@
+html
+    head
+        title Selamat Datang
+    body
+        a(href="http://localhost:3000/biodata/create") Tambah
+        table
+            tr
+                td no
+                td nama
+                td alamat
+                td aksi
+            for row, index in data
+                tr
+                    td #{index + 1}
+                    td #{row.nama}
+                    td #{row.alamat}
+                    td
+                        a(href="/biodata/delete/" + row.id_biodata) Hapus
+                        br
+                        a(href="/biodata/edit/" + row.id_biodata) Ubah

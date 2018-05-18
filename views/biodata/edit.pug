@@ -1,0 +1,12 @@
+html
+    head
+        title Tambah Biodata
+    body
+        form(action="/biodata/edit/" + data.id_biodata method="post")
+            label Nama
+                input(type="text" name="nama" value=data.nama)
+                br
+            label Alamat
+                input(type="text" name="alamat" value=data.alamat)
+                br
+            input(type="submit" value="simpan")
