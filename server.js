@@ -2,7 +2,6 @@ const express = require('express');
 const app = express()
 const mysql = require('mysql')
 const path = require('path')
-const bodyParser = require('body-parser')
 require('dotenv').config()
 
 // include router
@@ -23,7 +22,7 @@ con.connect(function (err) {
   }
 })
 
-// Using EJS template engine
+// Using pug template engine
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'pug')
 
@@ -34,8 +33,8 @@ app.use(function (req, res, next) {
 })
 
 // parsing post data
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({extended: true}))
+app.use(express.json())
+app.use(express.urlencoded({extended: true}))
 
 // routing
 app.use('/biodata', biodataRouter)
