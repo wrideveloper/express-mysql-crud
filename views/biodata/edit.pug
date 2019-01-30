@@ -2,7 +2,7 @@ html
     head
         title Tambah Biodata
     body
-        form(action="/biodata/edit/" + data.id_biodata method="post")
+        form(action=`/biodata/${data.id_biodata}?_method=PUT` method="post")
             label Nama
                 input(type="text" name="nama" value=data.nama)
                 br

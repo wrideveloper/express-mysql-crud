@@ -15,6 +15,6 @@ html
                     td #{row.nama}
                     td #{row.alamat}
                     td
-                        a(href="/biodata/delete/" + row.id_biodata) Hapus
-                        br
-                        a(href="/biodata/edit/" + row.id_biodata) Ubah
+                        form(action=`/biodata/${row.id_biodata}?_method=DELETE` method="post")
+                            input(type="submit" value="Hapus")
+                            a(href=`/biodata/${row.id_biodata}/edit`) Ubah
